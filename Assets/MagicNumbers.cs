@@ -17,12 +17,24 @@ public class MagicNumbers : MonoBehaviour
     void Start()
     {
         Debug.Log("Добро пожаловать, " + playerName);
+        StartGame();
+    }
+
+    void StartGame()
+    {
+        minNumber = 1;
+        maxNumber = 1000;
+
+
         Debug.Log("Загадайте число");
         Debug.Log("Мин. число: " + minNumber);
         Debug.Log("Макс. число: " + maxNumber);
+        UpdateGuess();
+    }
 
+    void UpdateGuess()
+    {
         guess = (minNumber + maxNumber) / 2;
-
         Debug.Log("Ваше число: " + guess + "?");
     }
 
@@ -31,16 +43,19 @@ public class MagicNumbers : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Up Arrow pressed");
+            minNumber = guess;
+            UpdateGuess();
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("Down Arrow pressed");
+            maxNumber = guess;
+            UpdateGuess();
         }
         else if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             Debug.Log("Я угадал! Ваше число было: " + guess);
-        }
+            StartGame();
 
+        }
     }
 }
