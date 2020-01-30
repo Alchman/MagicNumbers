@@ -8,6 +8,7 @@ public class HelloWorld : MonoBehaviour
     void Start()
     {
         // комментарий
+        Debug.Log("HelloWorld"); 
         Debug.Log("Bye World"); 
     }
 
