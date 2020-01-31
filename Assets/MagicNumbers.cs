@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MagicNumbers : MonoBehaviour
 {
+    //объявляем переменные на уровне класса, чтобы к ним был доступ из всех функций этого класса
     int minNumber = 1;
     int maxNumber = 1000;
     string playerName = "Denis";
@@ -17,11 +18,14 @@ public class MagicNumbers : MonoBehaviour
     void Start()
     {
         Debug.Log("Добро пожаловать, " + playerName);
+        
+        //вызываем функцию StartGame
         StartGame();
     }
 
     void StartGame()
     {
+        //эта функция сбрасывает значения переменных в исходное и начинает игру занаво
         minNumber = 1;
         maxNumber = 1000;
 
@@ -34,6 +38,7 @@ public class MagicNumbers : MonoBehaviour
 
     void UpdateGuess()
     {
+        //эта функция рассчитывает среднее арифметическое для текущего предположения
         guess = (minNumber + maxNumber) / 2;
         Debug.Log("Ваше число: " + guess + "?");
     }
