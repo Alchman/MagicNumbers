@@ -12,12 +12,17 @@ public class MagicNumbersUI : MonoBehaviour
     public Text textGuess;
     public TextMeshProUGUI textCount;
 
-    int guess;
+    public int guess;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
+
+
+        DontDestroyOnLoad(gameObject);
+
         //guess = (minNumber + maxNumber) / 2;
         guess = Random.Range(minNumber, maxNumber + 1);
 
@@ -25,6 +30,12 @@ public class MagicNumbersUI : MonoBehaviour
         textGuess.text = "Ваше число " + guess + "?";
 
         textCount.text = "Количество ходов: " + 2;
+
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Destroy Script");
     }
 
     // Update is called once per frame

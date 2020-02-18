@@ -445,7 +445,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 898848257}
         m_MethodName: LoadNextLevel
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 1487202849}
   - component: {fileID: 1487202850}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManagerTrue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,6 +893,7 @@ MonoBehaviour:
   maxNumber: 1000
   textGuess: {fileID: 1720431021}
   textCount: {fileID: 560259848}
+  guess: 0
 --- !u!1 &1720431019
 GameObject:
   m_ObjectHideFlags: 0
